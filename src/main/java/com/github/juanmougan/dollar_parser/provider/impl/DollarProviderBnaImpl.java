@@ -5,9 +5,11 @@ import com.github.juanmougan.dollar_parser.provider.DollarProvider;
 import org.jsoup.*;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 
+@Service("dollarProvider")
 public class DollarProviderBnaImpl implements DollarProvider {
 
 	private String PROVIDER_URL;
