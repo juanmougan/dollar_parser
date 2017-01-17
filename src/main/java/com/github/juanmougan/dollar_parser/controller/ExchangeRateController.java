@@ -1,8 +1,9 @@
-package com.github.juanmougan.dollar_parser;
+package com.github.juanmougan.dollar_parser.controller;
 
-import java.util.concurrent.atomic.AtomicLong;
+import com.github.juanmougan.dollar_parser.model.ExchangeRate;
+import com.github.juanmougan.dollar_parser.provider.DollarProvider;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
