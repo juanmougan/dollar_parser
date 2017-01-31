@@ -19,12 +19,12 @@ public class DollarProviderBnaImpl implements DollarProvider {
     	//   in order to reuse the jsoup part (and only use this URL as a param: doc.select("Dolar U.S.A");)
 		Document doc = null;
 		try {
-			PROVIDER_URL = "http://www.bna.com.ar/";
+			PROVIDER_URL = "https://www.bna.com.ar/Cotizador/MonedasHistorico";
 			doc = Jsoup.connect(getProviderUrl()).get();
 		} catch (IOException e) {
 			throw new RuntimeException("Cannot parse website at: " + getProviderUrl());
 		}
-		Elements cotizacionBna = doc.select("Dolar U.S.A");
+		Elements cotizacionBna = doc.select("div:contains(Dolar U.S.A)");
 		// TODO get the next element in the table
 		return new ExchangeRate();
 	}
