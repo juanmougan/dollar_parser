@@ -13,6 +13,12 @@ public class ExchangeRate {
     public ExchangeRate() {
     }
 
+    public ExchangeRate(Currency originalCurrency, BigDecimal rate, LocalDateTime timestamp) {
+        this.originalCurrency = originalCurrency;
+        this.rate = rate;
+        this.timestamp = timestamp;
+    }
+
     public Currency getOriginalCurrency() {
         return originalCurrency;
     }
