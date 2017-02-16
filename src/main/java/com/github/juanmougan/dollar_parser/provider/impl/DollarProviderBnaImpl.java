@@ -28,11 +28,12 @@ public class DollarProviderBnaImpl implements DollarProvider {
 		}
 		Element bnaExchangeRates = doc.select("tr:contains(" + BNA_DOLLAR_BANNER + ")").first();
 		String exchangeStr = bnaExchangeRates.select("td").last().text();
-		return new ExchangeRate(Currency.DOLLAR, new BigDecimal(exchangeStr), LocalDateTime.now());
+		return new ExchangeRate(Currency.DOLLAR,
+				new BigDecimal(exchangeStr.replaceAll(",", ".")), LocalDateTime.now());
 	}
 
 	@Override
 	public String getProviderUrl() {
-		return "https://www.bna.com.ar/Cotizador/MonedasHistorico";
+		return "https://www.bna.com.ar/";
 	}
 }
